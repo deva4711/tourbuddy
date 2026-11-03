@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TourBuddy – famous places around the world</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">TourBuddy</a>
+    <nav><a href="#map">World map</a><a href="#places">Places</a><a href="#guides">Guides</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <section class="hero" id="map">
+    <div class="intro">
+      <h1>Pick a pin. See the place.</h1>
+      <p>22 famous destinations across six continents. Click any marker to see a photo, the best months to go and a local tip.</p>
+    </div>
+    <div class="stage">
+      <div id="worldmap" aria-label="World map of famous places"></div>
+      <aside id="panel" class="panel" aria-live="polite">
+        <p class="empty">Select a marker on the map to see details here.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="places" class="wrap">
+    <h2>Famous places</h2>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="guides" class="wrap alt">
+    <h2>Local guides</h2>
+    <p class="sub">Sample guide profiles. Replace them with your real partners in <code>data.js</code>.</p>
+    <div class="guides" id="guideList"></div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <h2>Contact us</h2>
+    <form id="contactForm" class="form" novalidate>
+      <label>Your name <input name="name" required maxlength="100" autocomplete="name" /></label>
+      <label>Email <input name="email" type="email" required maxlength="150" autocomplete="email" /></label>
+      <label>Topic
+        <select name="topic"><option>Trip planning</option><option>Hire a guide</option><option>Feedback</option><option>Other</option></select>
+      </label>
+      <label class="full">Message <textarea name="message" rows="5" required maxlength="3000"></textarea></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" id="sendBtn">Send message</button>
+      <p id="formMsg" class="formmsg" role="status"></p>
+    </form>
+  </section>
+
+  <footer>© TourBuddy · Photos and summaries from Wikipedia · Map data © OpenStreetMap contributors</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
